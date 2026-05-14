@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gradient Image Generator with Text</title>
+<style>
+  body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  #canvasContainer {
+    margin-top: 10px;
+    border: 1px solid #000;
+    display: inline-block;
+  }
+  canvas {
+    image-rendering: pixelated;
+    width: auto;
+    height: 72px; /* scaled 9px → 72px */
+    display: block;
+  }
+  label {
+    margin-right: 5px;
+  }
+  .slider-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  input[type="range"] {
+    margin-right: 10px;
+  }
+  .options {
+    margin-top: 5px;
+  }
+</style>
+</head>
+<body>
+<h2>Gradient Image Generator (Custom Width × 9) with Text</h2>
+
+<div class="slider-container">
+  <label for="widthSlider">Width:</label>
+  <input type="range" id="widthSlider" min="1" max="500" value="40">
+  <span id="widthLabel">40</span>
+</div>
+
+<div>
+  <label for="color1">Color 1:</label>
+  <input type="color" id="color1" value="#ff0000">
+  <label for="color2">Color 2:</label>
+  <input type="color" id="color2" value="#0000ff">
+</div>
+
+<div class="options">
+  <label>
+    <input type="checkbox" id="roundedCorners"> Rounded Corners
+  </label>
+</div>
+
+<div class="options">
+  <label>
+    <input type="checkbox" id="autoWidth" checked> Auto Width
+  </label>
+</div>
+
+<div class="options">
+  <label for="overlayText">Text:</label>
+  <input type="text" id="overlayText" value="HELLO">
+</div>
+
+<div class="options">
+  <button id="download">Download PNG</button>
+</div>
+
+<div id="canvasContainer">
+  <canvas id="canvas" width="40" height="9"></canvas>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
