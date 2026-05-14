@@ -144,3 +144,21 @@ footer {
     padding: 1rem;
     line-height: 1.4;
 }
+/* ---- NEW CONTROLS ---- */
+
+.section-label {
+    font-size: 0.65rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.4rem;
+    margin-top: 0.25rem;
+}
+
+.stop-row {
+    flex-wrap: nowrap;
+}
+
+.stop-row label {
+    white-space: nowrap;
+}

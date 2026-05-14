@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <main class="glass"> <!-- haha that rhymes -->
+  <main class="glass">
     <header>
       <h2>Turtledevv's MC Role Creator :3</h2>
       <hr>
@@ -23,12 +23,49 @@
         <span id="widthLabel">40</span>
       </div>
 
+      <!-- GRADIENT STOPS -->
+      <div class="section-label">Gradient Colors</div>
+      <div id="gradientStops"></div>
       <div class="options">
-        <label>Color 1</label>
-        <input type="color" id="color1" value="#ff0000">
+        <button id="addStopBtn">+ Add Color</button>
+        <button id="removeStopBtn">− Remove Color</button>
+      </div>
 
-        <label>Color 2</label>
-        <input type="color" id="color2" value="#0000ff">
+      <!-- GRADIENT TYPE -->
+      <div class="options">
+        <label for="gradientType">Gradient Type</label>
+        <select id="gradientType">
+          <option value="linear-h">Linear (Horizontal)</option>
+          <option value="linear-v">Linear (Vertical)</option>
+          <option value="linear-d">Linear (Diagonal ↘)</option>
+          <option value="linear-d2">Linear (Diagonal ↗)</option>
+          <option value="radial">Radial</option>
+        </select>
+      </div>
+
+      <!-- BLEND MODE -->
+      <div class="options">
+        <label for="blendMode">Blend Mode</label>
+        <select id="blendMode">
+          <option value="smooth">Smooth</option>
+          <option value="steps">Hard Cuts</option>
+        </select>
+      </div>
+
+      <!-- TEXT COLOR -->
+      <div class="options">
+        <label for="textColorMode">Text Color</label>
+        <select id="textColorMode">
+          <option value="white">White</option>
+          <option value="black">Black</option>
+          <option value="custom">Custom</option>
+        </select>
+        <input type="color" id="textColor" value="#ffffff" style="display:none;">
+      </div>
+
+      <div class="options">
+        <label for="overlayText">Text</label>
+        <input type="text" id="overlayText" value="HELLO">
       </div>
 
       <div class="options">
@@ -43,11 +80,6 @@
           <input type="checkbox" id="autoWidth" checked>
           Auto Width
         </label>
-      </div>
-
-      <div class="options">
-        <label for="overlayText">Text</label>
-        <input type="text" id="overlayText" value="HELLO">
       </div>
 
       <div class="options">
@@ -68,7 +100,6 @@
       <div class="options" id="manualBorderControls" style="display:none;">
         <label>Border 1</label>
         <input type="color" id="borderColor1" value="#000000">
-
         <label>Border 2</label>
         <input type="color" id="borderColor2" value="#000000">
       </div>
@@ -86,7 +117,7 @@
 
   <footer>
     NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.<br>
-    MADE BY TRTLDEV, WITH LOVE, I GUESS <3
+    MADE BY TRTLDEV, WITH LOVE, I GUESS &lt;3
   </footer>
 </body>
 </html>
