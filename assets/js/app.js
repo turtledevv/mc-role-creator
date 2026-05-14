@@ -483,7 +483,7 @@ downloadBtn.addEventListener('click', () => {
     document.createElement('a');
 
     link.download =
-    `gradient_${canvas.width}x${canvas.height}.png`;
+    `thingy_${canvas.width}x${canvas.height}.png`;
 
     link.href =
     canvas.toDataURL();

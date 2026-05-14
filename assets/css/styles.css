@@ -1,19 +1,27 @@
+/*----------------------------------------*/
+
+html {
+    /* the magical number to zoom stuff, i guess */
+    font-size: 24px;
+}
+
+:root {
+    --bg-1: rgba(24, 20, 56, 1);
+    --bg-2: rgba(48, 14, 74, 1);
+    --the-magical-bg-thing: #5a455d4f;
+    --text: #f2f2f2;
+    --muted: #dadada;
+    --accent: #7c5cff;
+    --border: rgba(255,255,255,0.08);
+}
+
 @font-face {
     font-family: "Minecraft";
     src: url("/assets/fnt/Minecraft.ttf") format("truetype");
     font-display: swap;
 }
 
-:root {
-    --panel: #1a1a20;
-    --bg-1: rgba(24, 20, 56, 1);
-    --bg-2: rgba(48, 14, 74, 1);
-    --the-magical-bg-thing: #5a455d4f;
-    --text: #f2f2f2;
-    --muted: #b5b5b5;
-    --accent: #7c5cff;
-    --border: rgba(255,255,255,0.08);
-}
+/*----------------------------------------*/
 
 * {
     box-sizing: border-box;
@@ -22,31 +30,35 @@
 body {
     margin: 0;
     font-family: "Minecraft", sans-serif;
-    background: var(--bg-1);
-    background: linear-gradient(51deg,var(--bg-1) 0%, var(--bg-2) 100%);
+    background: linear-gradient(51deg, var(--bg-1) 0%, var(--bg-2) 100%);
+    min-height: 100vh;
+
+    font-size: 1rem;
     color: var(--text);
+
     display: flex;
     justify-content: center;
-    padding: 30px 12px;
+    padding: 1.5rem 0.75rem;
 }
 
 header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
 }
 
 h2 {
     margin: 0;
-    font-size: 20px;
-    letter-spacing: 0.5px;
+    font-size: 2.2rem;
+    letter-spacing: 0.03em;
     color: var(--text);
 }
 
 main {
     max-width: 100%;
-    min-width: 800px;
+    min-width: 45rem;
     width: fit-content;
-    padding: 16px;
+    height: fit-content;
+    padding: 1rem;
 }
 
 .slider-container,
@@ -54,13 +66,13 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 12px;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
 }
 
 label {
     color: var(--muted);
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 input[type="range"] {
@@ -70,17 +82,17 @@ input[type="range"] {
 input[type="text"],
 select {
     flex: 1;
-    padding: 6px 8px;
-    border-radius: 8px;
-    border: 1px solid var(--border);
+    padding: 0.4rem 0.5rem;
+    border-radius: 0.5rem;
+    border: 0.0625rem solid var(--border);
     background: var(--the-magical-bg-thing);
     color: var(--text);
     font-family: inherit;
 }
 
 input[type="color"] {
-    width: 36px;
-    height: 28px;
+    width: 2.25rem;
+    height: 1.75rem;
     border: none;
     background: transparent;
     cursor: pointer;
@@ -88,9 +100,9 @@ input[type="color"] {
 
 button {
     flex: 1;
-    padding: 8px;
-    border-radius: 10px;
-    border: 1px solid var(--border);
+    padding: 0.5rem;
+    border-radius: 0.625rem;
+    border: 0.0625rem solid var(--border);
     background: var(--the-magical-bg-thing);
     color: var(--text);
     font-family: inherit;
@@ -99,23 +111,23 @@ button {
 }
 
 button:hover {
-    transform: translateY(-1px);
+    transform: translateY(-0.125rem);
     border-color: var(--accent);
 }
 
 #canvasContainer {
-    margin-top: 14px;
+    margin-top: 0.875rem;
     display: flex;
     justify-content: center;
-    padding: 10px;
+    padding: 0.625rem;
     background: var(--the-magical-bg-thing);
-    border-radius: 12px;
-    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    border: 0.0625rem solid var(--border);
 }
 
 canvas {
     image-rendering: pixelated;
-    height: 72px;
+    height: 4.5rem;
     width: auto;
     display: block;
 }
@@ -127,7 +139,7 @@ footer {
     left: 0;
     width: 100%;
     text-align: center;
-    font-size: 0.5rem;
+    font-size: 0.75rem;
     color: #8888884f;
     padding: 1rem;
     line-height: 1.4;
