@@ -1,0 +1,134 @@
+@font-face {
+    font-family: "Minecraft";
+    src: url("/assets/fnt/Minecraft.ttf") format("truetype");
+    font-display: swap;
+}
+
+:root {
+    --panel: #1a1a20;
+    --bg-1: rgba(24, 20, 56, 1);
+    --bg-2: rgba(48, 14, 74, 1);
+    --the-magical-bg-thing: #5a455d4f;
+    --text: #f2f2f2;
+    --muted: #b5b5b5;
+    --accent: #7c5cff;
+    --border: rgba(255,255,255,0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Minecraft", sans-serif;
+    background: var(--bg-1);
+    background: linear-gradient(51deg,var(--bg-1) 0%, var(--bg-2) 100%);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    padding: 30px 12px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    color: var(--text);
+}
+
+main {
+    max-width: 100%;
+    min-width: 800px;
+    width: fit-content;
+    padding: 16px;
+}
+
+.slider-container,
+.options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+label {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+input[type="range"] {
+    flex: 1;
+}
+
+input[type="text"],
+select {
+    flex: 1;
+    padding: 6px 8px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--the-magical-bg-thing);
+    color: var(--text);
+    font-family: inherit;
+}
+
+input[type="color"] {
+    width: 36px;
+    height: 28px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+button {
+    flex: 1;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--the-magical-bg-thing);
+    color: var(--text);
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    border-color: var(--accent);
+}
+
+#canvasContainer {
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background: var(--the-magical-bg-thing);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+canvas {
+    image-rendering: pixelated;
+    height: 72px;
+    width: auto;
+    display: block;
+}
+
+/* feeter */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.5rem;
+    color: #8888884f;
+    padding: 1rem;
+    line-height: 1.4;
+}

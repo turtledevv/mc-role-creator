@@ -1,85 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Minecraft Role Image Creator Thingy</title>
-<style>
-  body {
-    font-family: sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-  #canvasContainer {
-    margin-top: 10px;
-    border: 1px solid #000;
-    display: inline-block;
-  }
-  canvas {
-    image-rendering: pixelated;
-    width: auto;
-    height: 72px;
-    display: block;
-  }
-  label {
-    margin-right: 5px;
-  }
-  .slider-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
-  }
-  input[type="range"] {
-    margin-right: 10px;
-  }
-  .options {
-    margin-top: 5px;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turtledevv's Minecraft Role Creator</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/liquidy-ass.css">
+  <script src="/assets/js/app.js" defer></script>
 </head>
+
 <body>
-<h2>Minecrap Role Generator Thingy</h2>
+  <main class="glass"> <!-- haha that rhymes -->
+    <header>
+      <h2>Turtledevv's MC Role Creator</h2>
+      <hr>
+    </header>
 
-<div class="slider-container">
-  <label for="widthSlider">Width:</label>
-  <input type="range" id="widthSlider" min="1" max="500" value="40">
-  <span id="widthLabel">40</span>
-</div>
+    <div id="controls">
+      <div class="slider-container">
+        <label for="widthSlider">Width</label>
+        <input type="range" id="widthSlider" min="1" max="500" value="40">
+        <span id="widthLabel">40</span>
+      </div>
 
-<div>
-  <label for="color1">Color 1:</label>
-  <input type="color" id="color1" value="#ff0000">
-  <label for="color2">Color 2:</label>
-  <input type="color" id="color2" value="#0000ff">
-</div>
+      <div class="options">
+        <label>Color 1</label>
+        <input type="color" id="color1" value="#ff0000">
 
-<div class="options">
-  <label>
-    <input type="checkbox" id="roundedCorners"> Rounded Corners
-  </label>
-</div>
+        <label>Color 2</label>
+        <input type="color" id="color2" value="#0000ff">
+      </div>
 
-<div class="options">
-  <label>
-    <input type="checkbox" id="autoWidth" checked> Auto Width
-  </label>
-</div>
+      <div class="options">
+        <label>
+          <input type="checkbox" id="roundedCorners">
+          Rounded Corners
+        </label>
+      </div>
 
-<div class="options">
-  <label for="overlayText">Text:</label>
-  <input type="text" id="overlayText" value="HELLO">
-</div>
+      <div class="options">
+        <label>
+          <input type="checkbox" id="autoWidth" checked>
+          Auto Width
+        </label>
+      </div>
 
-<div class="options">
-  <button id="download">Download PNG</button>
-</div>
+      <div class="options">
+        <label for="overlayText">Text</label>
+        <input type="text" id="overlayText" value="HELLO">
+      </div>
 
-<div id="canvasContainer">
-  <canvas id="canvas" width="40" height="9"></canvas>
-</div>
+      <div class="options">
+        <label for="borderMode">Border Mode</label>
+        <select id="borderMode">
+          <option value="auto">Auto</option>
+          <option value="overlay">Manual (Brightness)</option>
+          <option value="manual">Manual (Color)</option>
+        </select>
+      </div>
 
-<script src="app.js"></script>
+      <div class="options" id="overlayControls" style="display:none;">
+        <label for="borderBrightness">Brightness</label>
+        <input type="range" id="borderBrightness" min="0" max="2" step="0.05" value="0.5">
+        <span id="borderBrightnessLabel">0.5</span>
+      </div>
+
+      <div class="options" id="manualBorderControls" style="display:none;">
+        <label>Border 1</label>
+        <input type="color" id="borderColor1" value="#000000">
+
+        <label>Border 2</label>
+        <input type="color" id="borderColor2" value="#000000">
+      </div>
+
+      <div class="options">
+        <button id="download">Download PNG</button>
+        <button id="shareBtn">Copy Link</button>
+      </div>
+    </div>
+
+    <div id="canvasContainer">
+      <canvas id="canvas" width="40" height="9"></canvas>
+    </div>
+  </main>
+
+  <footer>
+    NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.<br>
+    MADE BY TRTLDEV, WITH LOVE, I GUESS <3
+  </footer>
 </body>
 </html>
