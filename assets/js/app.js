@@ -55,10 +55,11 @@ function renderStopRows() {
     gradientStopsCont.innerHTML = '';
     gradientStops.forEach((stop, i) => {
         const row = document.createElement('div');
-        row.className = 'options stop-row';
+        row.className = 'stop-row';
 
-        const colorLabel = document.createElement('label');
-        colorLabel.textContent = `Color ${i + 1}`;
+        const indexBadge = document.createElement('span');
+        indexBadge.className = 'stop-index';
+        indexBadge.textContent = i + 1;
 
         const colorPicker = document.createElement('input');
         colorPicker.type = 'color';
@@ -67,10 +68,6 @@ function renderStopRows() {
             gradientStops[i].color = colorPicker.value;
             autoGenerate();
         });
-
-        const posLabel = document.createElement('label');
-        posLabel.textContent = 'Pos';
-        posLabel.style.marginLeft = '0.5rem';
 
         const posSlider = document.createElement('input');
         posSlider.type = 'range';
@@ -85,15 +82,11 @@ function renderStopRows() {
         });
 
         const posValLabel = document.createElement('span');
+        posValLabel.className = 'stop-pos-label';
         posValLabel.textContent = Math.round(stop.position * 100) + '%';
-        posValLabel.style.minWidth = '2.5rem';
-        posValLabel.style.textAlign = 'right';
-        posValLabel.style.fontSize = '0.65rem';
-        posValLabel.style.color = 'var(--muted)';
 
-        row.appendChild(colorLabel);
+        row.appendChild(indexBadge);
         row.appendChild(colorPicker);
-        row.appendChild(posLabel);
         row.appendChild(posSlider);
         row.appendChild(posValLabel);
         gradientStopsCont.appendChild(row);
